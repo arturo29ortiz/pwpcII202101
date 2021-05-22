@@ -7,11 +7,10 @@
     "w:d": "SET NODE_ENV=development & babel-watch --watch ./server/views ./server/bin/www",
     "w:s": "SET NODE_ENV=development & webpack serve --config ./webpack.dev.config.js --mode development",
     "cleans": "rimraf dist-server",
-    "cleanc" : "rimraf public/js",
+    "cleanc": "rimraf public/js",
     "b:s": "npm run cleans && babel ./server --out-dir dist-server --copy-files",
     "b:c": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
-    "build": "npm run b:c && npm run b:s" 
-    
+    "build": "npm run b:c && npm run b:s"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -33,6 +32,8 @@
     "babel-watch": "^7.4.1",
     "core-js": "^3.12.1",
     "cross-env": "^7.0.3",
+    "css-loader": "^5.2.5",
+    "mini-css-extract-plugin": "^1.6.0",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-middleware": "^4.1.0",
