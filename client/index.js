@@ -3,7 +3,7 @@ import './stylesheets/mystyles.css'
 
 console.log("Webpack Working!!!");
 // Deafault parameters ES6/2015
-let show = (m = "hola") => {
+let show = (m = "Hot Module Replement Working") => {
     alert (m)
 };
 
