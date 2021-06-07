@@ -4,10 +4,14 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+
 import indexRouter from '@s-routes/index';
 import usersRouter from '@s-routes/users';
+
+// Importing configurations
+import configTemplateEngine from '@s-config/template-engine'
 // webpack Modules
-import webpack from 'webpack';
+import webpack, { config } from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.dev.config';
@@ -44,8 +48,8 @@ if (env === 'development') {
   console.log('> Excecuting in Production Mode...');
 }
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+configTemplateEngine(app);
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
