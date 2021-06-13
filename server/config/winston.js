@@ -30,7 +30,7 @@ const myFileFormat = combine(uncolorize(), timestamp(), json());
 const options = {
   infoFile: {
     level: 'info',
-    filename: `${appRoot}/server/logs/infos.log`,
+    filename: `${appRoot}//server/logs/infos.log`,
     handleExceptions: true,
     maxsize: 5242880, // 5MB
     maxFiles: 5,
@@ -65,7 +65,7 @@ const logger = winston.createLogger({
     new winston.transports.File(options.infoFile),
     new winston.transports.File(options.warnFile),
     new winston.transports.File(options.errorFile),
-    new winston.transports.File(options.console),
+    new winston.transports.Console(options.console),
   ],
   exitOnError: false, // No finaliza en excepciones manejadas
 });

@@ -4,7 +4,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
-import winston from 'winston';
+import winston from '@server/config/winston';
 
 import indexRouter from '@s-routes/index';
 import usersRouter from '@s-routes/users';
@@ -12,7 +12,7 @@ import usersRouter from '@s-routes/users';
 // Importing configurations
 import configTemplateEngine from '@s-config/template-engine';
 // webpack Modules
-import webpack, { config } from 'webpack';
+import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackDevConfig from '../webpack.dev.config';
@@ -47,6 +47,7 @@ if (env === 'development') {
 } else {
   console.log('> Excecuting in Production Mode...');
 }
+
 // view engine setup
 configTemplateEngine(app);
 
